@@ -9,7 +9,7 @@ body {
 /* Navbar stylování */
 nav {
   display: flex;
-  background-color: #4A8F8F; /* Výchozí barva pro navbar */
+  background-color: #DEB887; /* Výchozí barva pro navbar */
   padding: 10px;
 }
 
@@ -20,6 +20,7 @@ nav ul {
   margin: 0;
   padding: 0;
   width: 100%;
+  flex-wrap: wrap; /* Umožní zalamování položek, pokud se nevejdou */
 }
 
 nav ul li {
@@ -52,40 +53,124 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-/* Responzivní stylování */
-@media (max-width: 768px) {
-  nav ul li:not(:first-child) {
-    display: none; /* Skryje všechny položky kromě první */
+/* Responzivní stylování pro max-width 1390px */
+@media (max-width: 1390px) {
+  /* Poslední položka půjde do dropdown menu */
+  nav ul li:nth-last-child(1) {
+    display: none;
   }
-
+  
   .menu-button {
     display: inline; /* Zobrazí menu tlačítko */
   }
+  
+  .dropdown-content {
+    display: none; /* Skryje dropdown menu */
+    position: absolute;
+    background-color: #4A8F8F;
+    right: 10px;
+    top: 50px;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #6B8E23;
+  }
+
+  .show {
+    display: block;
+  }
 }
 
-/* Dropdown menu pro mobilní verzi */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #4A8F8F;
-  right: 10px;
-  top: 50px;
-  min-width: 150px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+/* Responzivní stylování pro max-width 1200px */
+@media (max-width: 1200px) {
+  /* Předposlední položka půjde do dropdown menu */
+  nav ul li:nth-last-child(2) {
+    display: none;
+  }
 }
 
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+/* Responzivní stylování pro max-width 1100px */
+@media (max-width: 1100px) {
+  /* Třetí položka od konce půjde do dropdown menu */
+  nav ul li:nth-last-child(3) {
+    display: none;
+  }
 }
 
-.dropdown-content a:hover {
-  background-color: #6B8E23; /* Mění barvu při najetí myší */
+/* Responzivní stylování pro max-width 1000px */
+@media (max-width: 1000px) {
+  /* Čtvrtá položka od konce půjde do dropdown menu */
+  nav ul li:nth-last-child(4) {
+    display: none;
+  }
 }
 
-.show {
-  display: block; /* Zobrazí dropdown menu */
+/* Responzivní stylování pro max-width 900px */
+@media (max-width: 900px) {
+  /* Pátá položka od konce půjde do dropdown menu */
+  nav ul li:nth-last-child(5) {
+    display: none;
+  }
 }
+
+/* Responzivní stylování pro max-width 800px */
+@media (max-width: 800px) {
+  /* Šestá položka od konce půjde do dropdown menu */
+  nav ul li:nth-last-child(6) {
+    display: none;
+  }
+}
+
+/* Responzivní stylování pro max-width 700px */
+@media (max-width: 700px) {
+  /* Sedmá položka od konce půjde do dropdown menu */
+  nav ul li:nth-last-child(7) {
+    display: none;
+  }
+}
+
+/* Responzivní stylování pro mobilní zařízení */
+@media (max-width: 600px) {
+  nav ul li {
+    margin: 0 5px; /* Zúží mezery mezi položkami */
+  }
+
+  .menu-button {
+    font-size: 16px; /* Menší velikost tlačítka */
+  }
+
+  .dropdown-content {
+    right: 0;
+    top: 40px;
+  }
+}
+
+/* Pokud šířka obrazovky přesahuje 1390px, zvětší navbar */
+@media (min-width: 1391px) {
+  nav {
+    padding: 15px; /* Zvýší padding pro větší navbar */
+  }
+
+  nav ul li {
+    font-size: 18px; /* Zvýší velikost písma pro položky v navbaru */
+  }
+
+  .menu-button {
+    display: none; /* Skryje tlačítko pro menu při větší šířce */
+  }
+
+  .dropdown-content {
+    display: none; /* Skryje dropdown menu při větší šířce */
+  }
+}
+
