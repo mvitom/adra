@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Masáž</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="co-je-tcm.html">TCM Adriana Kúrová</a></li>
+          <li><a href="co-je-tcm.html">Co je TCM</a></li>
+          <li><a href="diagnostika.html">Diagnostika a harmonizace</a></li>
+          <li><a href="pomoc.html">S čím můžu pomoci</a></li>
+          <li><a href="masaz.html">Masáž</a></li>
+          <li><a href="vzdelani.html">Vzdělání a praxe</a></li>
+          <li><a href="cenik.html">Ceník</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="lifting.html">Manuální lifting obličeje</a></li>
+        </ul>
+        <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+        <div id="dropdown" class="dropdown-content">
+          <a href="co-je-tcm.html">Co je TCM</a>
+          <a href="diagnostika.html">Diagnostika a harmonizace</a>
+          <a href="pomoc.html">S čím můžu pomoci</a>
+          <a href="masaz.html">Masáž</a>
+          <a href="vzdelani.html">Vzdělání a praxe</a>
+          <a href="cenik.html">Ceník</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="lifting.html">Manuální lifting obličeje</a>
+        </div>
+    </nav>
+      
+      
+      
+      
+  <section>
+    <h2>Masáž</h2>
+    <p>Specializované masáže na základě TCM, které pomáhají s uvolněním a harmonizací těla.</p>
+  </section>
+</body>
+<script>
+    function toggleMenu() {
+      var dropdown = document.getElementById("dropdown");
+      dropdown.classList.toggle("show");
+    }
+  
+    // Skryje dropdown menu, pokud uživatel klikne mimo něj
+    window.onclick = function(event) {
+      if (!event.target.matches('.menu-button')) {
+        var dropdown = document.getElementById("dropdown");
+        if (dropdown.classList.contains('show')) {
+          dropdown.classList.remove('show');
+        }
+      }
+    }
+  </script>
+  
+</html>
